@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="keywords" content="интернет-магазин, продажа кофе, кофе, зерновой кофе, молотый кофе">
+    <meta name="author" content="Габдрахманова Диана">
+    <link rel="icon" href="Images/favicon.png" type="image/x-icon">
+    <title>Aroma — свежая обжарка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <header class="shop-header">
+        <div class="logo">
+            <h1> Aroma </h1>
+            <p>Спешелти с душой</p>
+        </div>
+        <div class="cart-badge" id="cart-badge">🛒 Корзина: <span id="cart-count">0</span> товаров</div>
+    </header>
+
+    <div class="main-grid">
+        <aside class="filters-card">
+            <h3>Фильтры</h3>
+            <div class="filter-group">
+                <label> Тип кофе</label>
+                <select id="filter-type">
+                    <option value="all">Все типы</option>
+                    <option value="Зерновой">Зерновой</option>
+                    <option value="Молотый">Молотый</option>
+                    <option value="Растворимый">Растворимый</option>
+                    <option value="В капсулах">В капсулах</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label> Объем / вес</label>
+                <select id="filter-volume">
+                    <option value="all">Любой</option>
+                    <option value="200г">200 г</option>
+                    <option value="500г">500 г</option>
+                    <option value="1кг">1 кг</option>
+                    <option value="10шт">10 шт (капсулы)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label> Обжарка</label>
+                <select id="filter-roast">
+                    <option value="all">Любая</option>
+                    <option value="Светлая">Светлая</option>
+                    <option value="Средняя">Средняя</option>
+                    <option value="Тёмная">Тёмная</option>
+                </select>
+            </div>
+            <button class="reset-filters" id="reset-filters">Сбросить все фильтры</button>
+        </aside>
+
+        <section>
+            <div class="products-grid" id="products-container"></div>
+        </section>
+
+        <aside class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-card">
+                <h3> Корзина</h3>
+                <div id="cart-items-list" class="cart-items"></div>
+                <div class="cart-total">Итого: <span id="cart-total">0</span> ₽</div>
+                <hr>
+                <h4>Оформление заказа</h4>
+                <form id="order-form">
+                    <input type="text" id="user-name" placeholder="Ваше имя" required>
+                    <input type="text" id="user-address" placeholder="Адрес доставки" required>
+                    <input type="tel" id="user-phone" placeholder="Телефон" required>
+                    <button type="submit" id="order-btn" class="order-btn">✅ Заказать</button>
+                </form>
+                <button id="clear-cart" class="clear-cart-btn">Очистить корзину</button>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<!-- Анимация грузовика -->
+<div id="truck-overlay" class="truck-overlay">
+    <div class="truck-container">
+        <svg class="truck-svg" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+            <rect x="100" y="70" width="320" height="100" rx="15" fill="#E67E22" stroke="#D35400" stroke-width="5"/>
+            <circle cx="260" cy="120" r="40" fill="#F39C12" stroke="#FFFFFF" stroke-width="5"/>
+            <text x="260" y="132" text-anchor="middle" fill="white" font-size="36" font-weight="bold">☕</text>
+            <rect x="30" y="50" width="90" height="120" rx="12" fill="#2980B9" stroke="#1F618D" stroke-width="5"/>
+            <rect x="50" y="75" width="55" height="40" rx="8" fill="#A9CCE3" stroke="#1F618D" stroke-width="3"/>
+            <circle cx="150" cy="185" r="28" fill="#2C3E50" stroke="#1A252F" stroke-width="5"/>
+            <circle cx="150" cy="185" r="12" fill="#BDC3C7"/>
+            <circle cx="380" cy="185" r="28" fill="#2C3E50" stroke="#1A252F" stroke-width="5"/>
+            <circle cx="380" cy="185" r="12" fill="#BDC3C7"/>
+            <text x="280" y="175" fill="#FFFFFF" font-size="20" font-weight="bold" text-anchor="middle">Aroma</text>
+        </svg>
+        <p class="truck-text">🚚 Ваш заказ в пути...</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
