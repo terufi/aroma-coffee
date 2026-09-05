@@ -290,3 +290,7 @@ select {
     .products-grid { grid-template-columns: 1fr; }
     .truck-svg { width: 95%; height: auto; }
 }
+.my-new-style {
+    color: #2c1e12;
+    font-weight: 600;
+}
